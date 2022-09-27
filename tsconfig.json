@@ -2,11 +2,10 @@
   "compilerOptions": {
     "target": "es6",
     "module": "commonjs",
-    "moduleResolution": "node",
     "sourceMap": true,
-    "rootDir": "src",
-    "outDir": "dist",
-    "lib": ["ES2022"],
+    "lib": [
+      "ES2022"
+    ],
     "strict": true,
     "noImplicitAny": true,
     "strictFunctionTypes": true,
@@ -17,7 +16,20 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "outDir": "./dist",
+    "baseUrl": "./src",
+    "paths": {
+      "@utils": [
+        "utils"
+      ]
+    }
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules"]
+  "include": [
+    "src/**/*",
+    "src/config/setup/tsconfig-paths-bootstrap.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
