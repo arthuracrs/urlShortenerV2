@@ -4,10 +4,15 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "cls && yarn tsc && node -r ./tsconfig-paths-bootstrap.js dist/index.js"
+    "start": "cls && yarn tsc && node -r ./tsconfig-paths-bootstrap.js dist/index.js",
+    "lint": "cls && eslint \"{src, test}/**/*.ts\"",
+    "lint:fix": "cls && eslint \"{src, test}/**/*.ts\" --fix"
   },
   "devDependencies": {
     "@types/node": "^18.7.22",
+    "@typescript-eslint/eslint-plugin": "^5.38.1",
+    "@typescript-eslint/parser": "^5.38.1",
+    "eslint": "^8.24.0",
     "typescript": "^4.8.3"
   },
   "dependencies": {

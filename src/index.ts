@@ -1,3 +1,3 @@
-import { msg } from '@utils'
+import { msg } from '@utils';
 
-console.log(msg)
+console.log(msg); 

@@ -1,2 +1,2 @@
 
-export const msg = "fom" 
+export const msg = 'fom'; 
