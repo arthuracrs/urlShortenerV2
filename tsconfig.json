@@ -26,8 +26,7 @@
     }
   },
   "include": [
-    "src/**/*",
-    "src/config/setup/tsconfig-paths-bootstrap.ts"
+    "src/**/*"
   ],
   "exclude": [
     "node_modules"

@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "cls && yarn tsc && node -r ./dist/tsconfig-paths-bootstrap.js dist/index.js"
+    "start": "cls && yarn tsc && node -r ./tsconfig-paths-bootstrap.js dist/index.js"
   },
   "devDependencies": {
     "@types/node": "^18.7.22",
