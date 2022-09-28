@@ -18,15 +18,16 @@
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node",
     "outDir": "./dist",
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "paths": {
       "@utils": [
-        "utils"
+        "src/utils"
       ]
     }
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "test/**/*",
   ],
   "exclude": [
     "node_modules"
