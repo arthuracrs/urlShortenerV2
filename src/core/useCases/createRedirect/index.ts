@@ -26,40 +26,27 @@ export function isValidURL(string: string) {
 
 export class inputCreateRedirect {
   constructor(
-    protected _inputLink: string,
-    protected _outputLink: string,
-    protected _owner: string,
-  ) { }
-
-  public get inputLink() {
-    return this._inputLink;
-  }
-
-  public set inputLink(inputLink: string) {
+    private inputLink: string,
+    private outputLink: string,
+    private owner: string,
+  ) { 
     if (!isValidURL(inputLink)) {
-      throw new Error('fom');
-      
+      throw new Error('Invalid inputLink');
     }
-    this._inputLink = inputLink;
+
+    if (!isValidURL(outputLink)) {
+      throw new Error('Invalid outputLink');
+    }
   }
 
-  public get outputLink() {
-    return this._outputLink;
-  }
-
-  public set outputLink(outputLink: string) {
-    this._outputLink = outputLink;
-  }
-
-  public get owner() {
-    return this._owner;
-  }
-
-  public set owner(owner: string) {
-    this._owner = owner;
+  toJson(): IInputCreateRedirect{
+    return {
+      inputLink: this.inputLink,
+      outputLink: this.outputLink,
+      owner: this.owner
+    }
   }
 }
-
 
 export class CreateRedirect {
   constructor(
@@ -80,5 +67,4 @@ export class CreateRedirect {
 
     return redirect;
   }
-
 }

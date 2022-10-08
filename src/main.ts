@@ -7,10 +7,22 @@
 //   console.log(`running on port ${port}`);
 // });
 
-import { inputCreateRedirect } from './core/useCases/createRedirect';
 
-const newInput = new inputCreateRedirect('fom', 'fom', 'fom');
+import { IdGeneratorRepository } from "./adapters/idGenerator";
+import { RedirectRepository } from "./adapters/redirectRepository";
+import { inputCreateRedirect, CreateRedirect } from './core/useCases/createRedirect';
 
-newInput.inputLink = 'https://developer.mozilla.org/en-US/docs/Web/API/URL';
+const input = new inputCreateRedirect(
+  'https://developer.mozilla.org',
+  'https://developer.mozilla.org',
+  'fom'
+);
+const redirectRepository = new RedirectRepository()
+const idGeneratorRepository = new IdGeneratorRepository()
+const createRedirect = new CreateRedirect(redirectRepository, idGeneratorRepository);
 
-console.log(newInput.inputLink);
+const main = async () => {
+  console.log(await createRedirect.run(input.toJson()))
+}
+
+main()
