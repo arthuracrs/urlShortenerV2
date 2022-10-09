@@ -1,12 +1,3 @@
-// console.clear();
-// import { server } from '@src/server';
-
-// const port = 3000;
-
-// server.listen(port, () => {
-//   console.log(`running on port ${port}`);
-// });
-
 import { IdGeneratorRepository } from './adapters/idGenerator';
 import { RedirectRepository } from './adapters/inMemoryRedirectRepository';
 import { CreateRedirect } from './core/useCases/createRedirect';
@@ -14,8 +5,6 @@ import { LoadRedirect } from './core/useCases/loadRedirect';
 import { InputCreateRedirect } from './core/useCases/createRedirect/inputCreateRedirect';
 import { InputLoadRedirect } from './core/useCases/loadRedirect/inputLoadRedirect';
 import { InMemoryDB } from './adapters/db/inMemoryDB';
-
-
 
 const main = async () => {
   const db = new InMemoryDB();
