@@ -1,9 +1,10 @@
+import { IIdGeneratorRepository } from '@src/core/port/idGeneratorRepository';
 import { v4 as uuidv4 } from 'uuid';
 
-import { IIdGeneratorRepository } from '../core/useCases/createRedirect'
 
-export class IdGeneratorRepository  implements IIdGeneratorRepository{
-    generate(): string {
-        return uuidv4()
-    }
+export class IdGeneratorRepository implements IIdGeneratorRepository{
+  generate(): string {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call
+    return uuidv4();
+  }
 }
