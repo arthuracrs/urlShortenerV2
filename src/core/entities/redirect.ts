@@ -1,5 +1,4 @@
 export interface IRedirect {
-  redirectId?: string,
   owner?: string,
   inputLink: string,
   outputLink: string

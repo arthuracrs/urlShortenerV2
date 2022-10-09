@@ -30,7 +30,7 @@ export class RedirectRepository implements IRedirectRepository {
     }
 
     for (let i = 0; i < redirects.length; i++) {
-      if (redirects[i].redirectId == id) {
+      if (redirects[i].outputLink == id) {
         return new Promise((resolve) => {
           resolve(redirects[i]);
         });

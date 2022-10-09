@@ -1,4 +1,3 @@
-import { IdGeneratorRepository } from './adapters/idGenerator';
 import { RedirectRepository } from './adapters/inMemoryRedirectRepository';
 import { CreateRedirect } from './core/useCases/createRedirect';
 import { LoadRedirect } from './core/useCases/loadRedirect';
@@ -11,17 +10,16 @@ const main = async () => {
 
   const redirectRepository = new RedirectRepository(db);
 
-  const idGeneratorRepository = new IdGeneratorRepository();
   const inputCreateRedirect = new InputCreateRedirect(
     'https://developer.mozilla.org',
     'https://developer.mozilla.org',
     'fom'
   );
-  const createRedirect = new CreateRedirect(redirectRepository, idGeneratorRepository);
+  const createRedirect = new CreateRedirect(redirectRepository);
   const loadRedirect = new LoadRedirect(redirectRepository);
   
   const newRedirect = await createRedirect.run(inputCreateRedirect.toJson());
-  const inputLoadRedirect = new InputLoadRedirect(new String(newRedirect.redirectId).toString());
+  const inputLoadRedirect = new InputLoadRedirect(new String(newRedirect.outputLink).toString());
 
   console.log(await loadRedirect.run(inputLoadRedirect.toJson()));
 };
